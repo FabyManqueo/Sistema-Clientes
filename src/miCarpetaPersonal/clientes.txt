@@ -1,0 +1,8 @@
+Nombre cliente: 34443
+Apellido cliente: dff
+Años de cliente: 4
+Categoria: Activo
+Nombre cliente: 3445
+Apellido cliente: cdd
+Años de cliente: 2
+Categoria: Activo
