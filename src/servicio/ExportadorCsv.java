@@ -20,11 +20,11 @@ public class ExportadorCsv extends Exportador {
 	
 	ArrayList<Exportador>listaExportar=new ArrayList<>();
 	
-	public void exportar(ClienteServicio clienteServicio) throws IOException {
+	public void exportar(ClienteServicio clienteServicio,String fileName) throws IOException {
 	
 		//crear carpeta
-		File carpeta =new File("src/miCarpetaPersonal");
-		
+		//File carpeta =new File("src/miCarpetaPersonal");
+		File carpeta =new File("C:\\Users\\ing_f\\OneDrive\\Escritorio");
 		if (!carpeta.exists()) {
 			try {
 				carpeta.mkdirs();
@@ -35,8 +35,8 @@ public class ExportadorCsv extends Exportador {
 		}
          
 		//crear archivos
-		File archivo = new File(carpeta,"clientes.csv");
-		
+		//File archivo = new File(carpeta,"clientes.csv");
+		File archivo = new File(carpeta,fileName+".csv");
 		if (!archivo.exists()) {
 			try {
 				archivo.createNewFile();

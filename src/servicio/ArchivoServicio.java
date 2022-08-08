@@ -3,28 +3,33 @@ package servicio;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class ArchivoServicio {
-	
-public void cargarDatos() throws IOException{
-
-		//Leer el archivo
-		//FileReader leerArchivo = new FileReader(fileName);
-	     FileReader leerArchivo = new FileReader("src/miCarpetaBruja/clientes.txt");
+	private String linea=",";
+    private String partes[]=null;
+    
+public void cargarDatos(String fileName1) throws IOException{
+     	
+	   FileReader leerArchivo = new FileReader(fileName1);
 		BufferedReader memoriaLectura = new BufferedReader(leerArchivo);
 		
-		//Lee solo la primera linea del archvo
-		/*System.out.println("El contenido del archivo es:");
-		System.out.println(memoriaLectura.readLine());
-		*/
-		
-		//Lee todo el archivo
 		String contenidoArchivo = memoriaLectura.readLine();
 		while(contenidoArchivo != null) {
-			System.out.println(contenidoArchivo);
+			partes =contenidoArchivo.split(linea);
+			imprimirLinea();
+			System.out.println();
 			contenidoArchivo = memoriaLectura.readLine();
 		}
 		memoriaLectura.close();
+		linea = null;
+		partes=null;
+     
     }
+  public void imprimirLinea() {
+	  for(int i=0;i<partes.length;i++) {
+		  System.out.print(partes[i]+"|");
+	  }
+  }
 
 }

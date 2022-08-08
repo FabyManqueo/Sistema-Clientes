@@ -50,6 +50,17 @@ public class ClienteServicio extends Cliente{
 			
 			System.out.println(listaCliente.get(i));
 		}
+		
+        for (int i = 0; i < listaCliente.size(); i++) {
+			
+			System.out.println("---------------Datos del cliente----------------");
+			System.out.println("RUN del cliente:"+listaCliente.get(i).getRunCliente());
+			System.out.println("Nombre del cliente:"+listaCliente.get(i).getNombreCliente());
+			System.out.println("Apellido del cliente:"+listaCliente.get(i).getApellidoCliente());
+			System.out.println("Anios como cliente:"+listaCliente.get(i).getAniosCliente());
+			System.out.println("Categoria del cliente:"+listaCliente.get(i).getCategoriaCliente());
+			System.out.println("-------------------------------------------------");
+		}
 	}
 	
 	

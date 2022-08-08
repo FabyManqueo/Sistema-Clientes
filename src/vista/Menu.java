@@ -3,6 +3,7 @@ package vista;
 import java.util.Scanner;
 
 import modelo.Cliente;
+import servicio.ArchivoServicio;
 import servicio.ClienteServicio;
 import servicio.ExportadorCsv;
 import servicio.ExportadorTxt;
@@ -24,8 +25,10 @@ public void mostrarMenu() {
 	ClienteServicio clienteServicio = new ClienteServicio();
 	ExportadorCsv exportadorcsv = new ExportadorCsv();
 	ExportadorTxt exportadortxt = new ExportadorTxt();
+	ArchivoServicio archivoServicio = new ArchivoServicio();
 	Utilidad utilidad = new Utilidad();
-	
+	String fileName1="C:\\Users\\ing_f\\OneDrive\\Escritorio\\DBClientes.csv";
+	String fileName="clientes";
 	
 	do {
 		comparacion = false;
@@ -90,7 +93,7 @@ public void mostrarMenu() {
 				
 			}else if(opc.equals("4")) {
 				try {
-					
+					archivoServicio.cargarDatos(fileName1);
 				} catch (Exception e) {
 					System.out.printf("Error, intente otra vez \n",e.getMessage());
 				}
@@ -110,9 +113,9 @@ public void mostrarMenu() {
 					opcExportar=teclado.nextInt();
 					
 					if (opcExportar==1) {
-						exportadorcsv.exportar(clienteServicio);
+						exportadorcsv.exportar(clienteServicio,fileName);
 					}else if(opcExportar==2){
-					    exportadortxt.exportar(clienteServicio);
+					    exportadortxt.exportar(clienteServicio,fileName);
 
 					}
 					
